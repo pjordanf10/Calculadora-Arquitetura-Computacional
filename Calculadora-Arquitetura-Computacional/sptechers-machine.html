@@ -1,0 +1,79 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>SPTecher's Machine</title>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+        <h1>BatCalculadora</h1>
+
+        <select name="Escolha a casa" id="slt_casas">
+            <option value="Escolha" selected disabled >Escolha uma casa</option>
+            <option value="decimal" >Decimal</option>
+            <option value="octal" >Octal</option>
+            <option value="hexadecimal" >Hexadecimal</option>
+            <option value="binário" >Binário</option>
+        </select>
+
+        <h3>Digite um número:</h3>
+        <input id="input_num" type="text" placeholder="Ex: 42">
+        <br><br>
+    
+        <button onclick="converter()">Converter</button>
+        
+        <h3>Resultados:</h3>
+        <p>Octal:
+        <div id="demo2"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="demo3"></div>
+        </p>
+        <p>Binário:
+        <div id="demo4"></div>
+        </p>
+        <p>Decimal:
+        <div id="demo5"></div>
+        </p>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+        function converter() {
+            
+            var num = input_num.value
+            var octal = parseInt(num, 8);
+            var hexa = parseInt(num, 16);
+            var bi = parseInt(num, 2);
+
+            if (slt_casas.value == 'decimal') { 
+            var num = Number(num)
+            demo2.innerHTML = num.toString(8);
+            demo3.innerHTML = num.toString(16);
+            demo4.innerHTML = num.toString(2);
+            } else if (slt_casas.value == 'octal') {
+                demo3.innerHTML = octal.toString(16);
+                demo4.innerHTML = octal.toString(2);
+                demo5.innerHTML = octal.toString(10);
+            } else if (slt_casas.value == 'hexa') {
+                demo2.innerHTML = hexa.toString(8);
+                demo4.innerHTML = hexa.toString(2);
+                demo5.innerHTML = hexa.toString(10);
+            } else {
+                demo2.innerHTML = bi.toString(8);
+                demo3.innerHTML = bi.toString(16);
+                demo5.innerHTML = bi.toString(10);
+            }
+        }
+    </script>

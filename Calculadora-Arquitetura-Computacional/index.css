@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./image.png);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: greenyellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.container {
+    background-color: black;
+    border: color(greenyellow);
+    margin-top: 100px;
+    padding: 60px;
+    border-radius: 15%;
+    border: 2.5px solid greenyellow;
+}
